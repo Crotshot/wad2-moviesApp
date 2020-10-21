@@ -26,9 +26,9 @@ export default ({ movie }) => {
           Genres
         </li>
         {movie.genres.map(g => (
-          <li key={g.name} className="list-group-item">
+            <li key={g.name} className="list-group-item">
             {g.name}
-          </li>
+            </li>
         ))}
       </ul>
       <ul className="list-group list-group-horizontal">
