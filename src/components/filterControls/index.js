@@ -7,7 +7,11 @@ const FilterControls = props => {
     {id: 2, name: "Comedy"},
     {id: 3, name: "Thriller"}
   ]
-
+  const handleChange = (e, type, value) => {
+    e.preventDefault()
+    props.onUserInput(type, value)   // NEW
+  }
+  
   return (
       <div className="row bg-warning">
         <div className="col-md-12">
