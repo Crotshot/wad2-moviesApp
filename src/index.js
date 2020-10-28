@@ -9,16 +9,29 @@ import MoviePage from './pages/movieDetailsPage'
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="jumbotron">
-        <div className="container-fluid">
-          <Switch>
-            <Route path="/movies/:id" component={MoviePage} />
-            <Route path="/" component={HomePage} />
-            <Redirect from="*" to="/" />
-          </Switch>
-        </div>
+    <div className="jumbotron">
+      <div className="container-fluid">
+        <ul className="navbar-nav text-black">
+          <li className="nav-item">
+            <Link className="nav-link " to="/">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link " to="/movies/favorites">
+              Favorites
+            </Link>
+          </li>
+        </ul>
+        <Switch>
+          <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+          <Route path="/movies/:id" component={MoviePage} />
+          <Route path="/" component={HomePage} />
+          <Redirect from="*" to="/" />
+        </Switch>
       </div>
-    </BrowserRouter>
+    </div>
+  </BrowserRouter>
   );
 };
 
