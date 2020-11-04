@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Redirect, Switch} from "react-router-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
+import MovieReviewPage from "./pages/movieReviewPage";
 <Route path="/movies/:id" component={MoviePage} />
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           </li>
         </ul>
         <Switch>
+        <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
           <Route path="/movies/:id" component={MoviePage} />
           <Route path="/" component={HomePage} />
