@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import { getMovieReviews } from "../../api/tmdb-api";
-import { excerpt } from "src/util";
+import { excerpt } from "../../util";
 
 export default ({ movie }) => {
   const [reviews, setReviews] = useState([]);

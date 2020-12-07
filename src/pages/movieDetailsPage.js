@@ -17,6 +17,7 @@ const MoviePage = props => {
         </PageTemplate>
         <div className="row">
           <div className="col-12 ">
+
             {!props.history.location.pathname.endsWith("/reviews") ? (
               <Link
                 className="btn btn-primary btn-block active"
