@@ -3,6 +3,10 @@ import { getMovies } from "../api/tmdb-api";
 
 export const MoviesContext = createContext(null);
 
+const addReview = (movie, review) => {
+    dispatch({ type: "add-review", payload: { movie, review } }); // :\
+  }; 
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "add-favorite":
@@ -13,8 +17,14 @@ const reducer = (state, action) => {
       };
     case "load":
       return { movies: action.payload.movies };
-    case "add-review":
-      // Completed in next section
+      case "add-review":
+        return {
+          movies: state.movies.map((m) =>
+            m.id === action.payload.movie.id
+              ? { ...m, review: action.payload.review }
+              : m
+          ),
+        };
       break;
     default:
       return state;
