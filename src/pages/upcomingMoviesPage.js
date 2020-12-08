@@ -1,17 +1,23 @@
-import React from "react";
-import StubAPI from "../api/stubAPI";
-import PageTemplate from "../components/templateMovieListPage";
+import React, { useContext } from "react";
+import PageTemplate from '../components/templateMovieListPage';
+import {MoviesContext} from '../contexts/moviesContext';
+import AddToFavoritesButton from '../components/buttons/addToFavorites';
 
-const UpcomingMoviesPage = props => {
-  const toDo = () => true;
+const UpcomingMoviesListPage = () => {
+  const context = useContext(MoviesContext);
+  const movies = context.upcoming.filter((m) => {  // New
+    return !("favorite" in m);
+  });
 
   return (
     <PageTemplate
-      movies={StubAPI.getAll()}
-      title={"Upcoming Movies"}
-      buttonHandler={toDo}
+      title="No. Upcoming Movies"
+      movies={movies}
+      action={(movie) => {
+        return <AddToFavoritesButton movie={movie} />;
+      }}
     />
   );
 };
 
-export default UpcomingMoviesPage;
+export default UpcomingMoviesListPage;
