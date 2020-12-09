@@ -5,14 +5,14 @@ import AddToWatchListButton from '../components/buttons/addToWatchList';
 
 const UpcomingMoviesListPage = () => {
   const context = useContext(MoviesContext);
-  const movies = context.upcoming.filter((m) => {  // New
-    return !("favorite" in m);
+  const upcoming = context.upcoming.filter((m) => {
+    return !("watchList" in m);
   });
 
   return (
     <PageTemplate
       title="No. Upcoming Movies"
-      movies={movies}
+      movies={upcoming}
       action={(movie) => {
         return <AddToWatchListButton movie={movie} />;
       }}
