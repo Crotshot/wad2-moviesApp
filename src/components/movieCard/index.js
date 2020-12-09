@@ -4,7 +4,7 @@ import "./movieCard.css";
 import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const MovieCard = ({movie, action}) => {
+const MovieCard = ({movie, action0, action1}) => {
 
   return (
     <div className="col-sm-3">
@@ -32,7 +32,10 @@ const MovieCard = ({movie, action}) => {
           </p>
         </div>
         <div className="card-footer">
-           {action(movie)}
+           {action0(movie)}
+        </div>
+        <div className="card-footer">
+           {action1(movie)}
         </div>
       </div>
     </div>

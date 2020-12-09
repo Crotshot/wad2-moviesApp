@@ -11,7 +11,8 @@ const WatchListPage = props => {
     <MovieListPageTemplate
       movies={watchlist}
       title={"Watch List"}
-      action={movie => <RemoveFromWatchList movie={movie} />}
+      action0={movie => <RemoveFromWatchList movie={movie} />}
+      action1={movie => <AddReviewButton movie={movie} />}
     />
   );
 };
