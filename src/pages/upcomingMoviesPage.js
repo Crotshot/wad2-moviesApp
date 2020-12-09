@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import PageTemplate from '../components/templateMovieListPage';
+import {MovieListPageTemplateSingle} from '../components/templateMovieListPage';
 import {MoviesContext} from '../contexts/moviesContext';
 import AddToWatchListButton from '../components/buttons/addToWatchList';
 
@@ -10,13 +10,10 @@ const UpcomingMoviesListPage = () => {
   });
 
   return (
-    <PageTemplate
+    <MovieListPageTemplateSingle
       title="No. Upcoming Movies"
       movies={upcoming}
-      action0={(movie) => {
-        return <AddToWatchListButton movie={movie} />;
-      }}
-      action1={(movie) => {
+      action={(movie) => {
         return <AddToWatchListButton movie={movie} />;
       }}
     />

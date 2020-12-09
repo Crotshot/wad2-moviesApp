@@ -1,12 +1,19 @@
 import React from "react";
-import Movie from "../movieCard/";
+import {MovieCardDouble,MovieCardSingle} from "../movieCard";
 import "./movieList.css";
 
-const MovieList = ({movies, action0, action1}) => {
+export const MovieListDouble = ({movies, action0, action1}) => {
   const movieCards = movies.map(m => (
-    <Movie key={m.id} movie={m} action0={action0} action1={action1}/>
+    <MovieCardDouble key={m.id} movie={m} action0={action0} action1={action1}/>
   ));
   return <div className="row movies bg-info">{movieCards}</div>;
 };
 
-export default MovieList;
+export const MovieListSingle = ({movies, action}) => {
+  const movieCards = movies.map(m => (
+    <MovieCardSingle key={m.id} movie={m} action={action}/>
+  ));
+  return <div className="row movies bg-info">{movieCards}</div>;
+};
+
+export default MovieListDouble;
