@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 import MovieListPageTemplate from "../components/templateMovieListPage";
-import AddReviewButton from '../components/buttons/addReview'
-import {MoviesContext} from '../contexts/moviesContext'
+import AddReviewButton from '../components/buttons/addReview';
+import RemoveFromFavoritesButton from '../components/buttons/removeFromFavorites';
+import {MoviesContext} from '../contexts/moviesContext';
 
 const FavoriteMoviesPage = props => {
   const context = useContext(MoviesContext);
@@ -16,3 +17,7 @@ const FavoriteMoviesPage = props => {
 };
 
 export default FavoriteMoviesPage;
+
+
+
+

@@ -12,10 +12,24 @@ const reducer = (state, action) => {
         ),
         upcoming: [...state.upcoming],
       };
+    case "remove-favorite":
+      return {
+        movies: state.movies.map((m) =>
+          m.id === action.payload.movie.id ? { ...m, favorite: false } : m
+        ),
+        upcoming: [...state.upcoming],
+      };
     case "add-watch-list":
       return {
         upcoming: state.upcoming.map((m) =>
            m.id === action.payload.movie.id ? { ...m, watchList: true } : m
+        ),
+        movies: [...state.movies],
+      };
+    case "remove-watch-list":
+      return {
+        upcoming: state.upcoming.map((m) =>
+           m.id === action.payload.movie.id ? { ...m, watchList: false } : m
         ),
         movies: [...state.movies],
       };
@@ -45,9 +59,19 @@ const MoviesContextProvider = (props) => {
     dispatch({ type: "add-favorite", payload: { movie: state.movies[index] } });
   };
 
+  const removeFromFavorites = (movieId) => {
+    const index = state.movies.map((m) => m.id).indexOf(movieId);
+    dispatch({ type: "remove-favorite", payload: { movie: state.movies[index] } });
+  };
+
   const addToWatchList = (movieId) => {
     const index = state.upcoming.map((m) => m.id).indexOf(movieId);
     dispatch({ type: "add-watch-list", payload: { movie: state.upcoming[index] } });
+  };
+
+  const removeFromWatchList = (movieId) => {
+    const index = state.upcoming.map((m) => m.id).indexOf(movieId);
+    dispatch({ type: "remove-watch-list", payload: { movie: state.upcoming[index] } });
   };
 
   const addReview = (movie, review) => {
@@ -74,7 +98,9 @@ const MoviesContextProvider = (props) => {
         movies: state.movies,
         upcoming: state.upcoming,
         addToFavorites: addToFavorites,
+        removeFromFavorites: removeFromFavorites,
         addToWatchList: addToWatchList,
+        removeFromWatchList: removeFromWatchList,
         addReview: addReview,
       }}
     >
