@@ -6,10 +6,11 @@ import AddReviewButton from '../components/buttons/addReview';
 
 const MovieListPage = () => {
   const context = useContext(MoviesContext);
+  //m.favorite === false
   const movies = context.movies.filter((m) => {
-    return !("favorite" in m);
+    return m.favorite === false || !("favorite" in m);
   });
-
+  debugger
   return (
     <MovieListPageTemplateDouble
       title="No. Movies"

@@ -17,8 +17,9 @@ const reducer = (state, action) => {
     case "remove-favorite":
       return {
         movies: state.movies.map((m) =>
-          m.id === action.payload.movie.id ? { ...m, favorite: false } : m
+          m.id === action.payload.movie.id ? {...m, favorite: false} : m
         ),
+
         upcoming: [...state.upcoming],
         popular: [...state.popular],
         top_rated: [...state.top_rated],
