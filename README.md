@@ -24,43 +24,43 @@ Type  "npm start" into the console and connect to application on localhost:3000
 
 ### UI Design.
 
-![][homePage.png]
+![][homePage]
 >Changed aesthetic of application
 
-![][popularMovies.png]
+![][popularMovies]
 >Added popular movies page
 
-![][topRatedMovies.png]
+![][topRatedMovies]
 >Added top rated movies page
 
-![][movieDetails1.png]
+![][movieDetails1]
 >Movie details page now has similar movies displayed beneath review
 
-![][movieDetails2.png]
+![][movieDetails2]
 >Movie details - extended
 
-![][addToFavorites.png]
+![][addToFavorites]
 >Hovering over the Add to Favorites button will animated it with an upward arrow.
 
-![][addToFavoritesAnim.png]
+![][addToFavoritesAnim]
 >As shown here
 
-![][removeFromFavorites.png]
+![][removeFromFavorites]
 >Hovering over the Remove from Favorites button will animated it with a downward arrow.
 
-![][removeFromFavoritesAnim.png]
+![][removeFromFavoritesAnim]
 >As shown here
 
-![][addToWatchList.png]
+![][addToWatchList]
 >Hovering over the Add to Watch List button will animated it with an upward arrow.
 
-![][addToWatchListAnim.png]
+![][addToWatchListAnim]
 >As shown here
 
-![][removeFromWatchList.png]
+![][removeFromWatchList]
 >Hovering over the Remove from Watch List button will animated it with a downward arrow.
 
-![][removeFromWatchListAnim.png]
+![][removeFromWatchListAnim]
 >As shown here
 
 ## Routing.
