@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import {MovieListPageTemplateSingle} from '../components/templateMovieListPage';
+import {MovieListPageTemplateDouble} from '../components/templateMovieListPage';
 import {MoviesContext} from '../contexts/moviesContext';
 import AddToWatchListButton from '../components/buttons/addToWatchList';
+import AddReviewButton from '../components/buttons/addReview';
 
 const UpcomingMoviesListPage = () => {
   const context = useContext(MoviesContext);
@@ -10,11 +11,14 @@ const UpcomingMoviesListPage = () => {
   });
 
   return (
-    <MovieListPageTemplateSingle
+    <MovieListPageTemplateDouble
       title="No. Upcoming Movies"
       movies={upcoming}
-      action={(movie) => {
+      action0={(movie) => {
         return <AddToWatchListButton movie={movie} />;
+      }}
+      action1={(movie) => {
+        return <AddReviewButton movie={movie} />;
       }}
     />
   );

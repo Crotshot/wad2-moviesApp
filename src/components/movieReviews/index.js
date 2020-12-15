@@ -15,17 +15,17 @@ export default ({ movie }) => {
     <table className="table table-striped table-bordered table-hover">
       <thead>
         <tr>
-          <th scope="col">Author</th>
-          <th scope="col">Excerpt</th>
-          <th scope="col">More</th>
+          <th className="text-info"scope="col">Author</th>
+          <th className="text-info"scope="col">Excerpt</th>
+          <th className="text-info"scope="col">More</th>
         </tr>
       </thead>
       <tbody>
         {reviews.map(r => {
             return (
               <tr key={r.id}>
-                <td>{r.author}</td>
-                <td>{excerpt(r.content)}</td>
+                <td className="text-info">{r.author}</td>
+                <td className="text-info">{excerpt(r.content)}</td>
                 <td>
                   {" "}
                   <Link

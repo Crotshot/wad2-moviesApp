@@ -4,9 +4,9 @@ const Header = ({ title, numMovies }) => {
   return (
     <div className="row">
       <div className="col-md-6 offset-4">
-        <h2>
+        <h2  className="text-warning">
           {`${title}  `}
-          <span className="badge badge-pill badge-success">{numMovies}</span>
+          <span className="badge badge-pill badge-info">{numMovies}</span>
         </h2>
       </div>
     </div>

@@ -6,7 +6,7 @@ const MovieHeader = ({ movie }) => {
   return (
     <div className="row">
       <div className="col-6 offset-3">
-        <h2>
+        <h2 className="text-warning">
           {movie.title}
           {"  "}
           <a href={movie.homepage}>

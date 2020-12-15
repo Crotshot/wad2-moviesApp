@@ -10,7 +10,6 @@ const MovieListPage = () => {
   const movies = context.movies.filter((m) => {
     return m.favorite === false || !("favorite" in m);
   });
-  debugger
   return (
     <MovieListPageTemplateDouble
       title="No. Movies"

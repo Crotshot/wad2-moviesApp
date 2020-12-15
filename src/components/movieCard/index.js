@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export const MovieCardDouble = ({movie, action0, action1}) => {
   return (
     <div className="col-sm-3">
-      <div className="card  bg-white">
+      <div className="card  bg-dark">
       <Link to={`/movies/${movie.id}`}>
         <img
           className="card-img-tag center "
@@ -22,11 +22,11 @@ export const MovieCardDouble = ({movie, action0, action1}) => {
         <div className="card-body">
           <h4 className="card-title ">{movie.title}</h4>
           <p>
-            <FontAwesomeIcon icon={["fas", "calendar"]} />
+            <FontAwesomeIcon icon={["fas", "calendar"]} color = "orange" />
             <span> {movie.release_date}</span>
           </p>
           <p>
-            <FontAwesomeIcon icon={["fas", "star"]} />
+            <FontAwesomeIcon icon={["fas", "star"]} color = "gold"/>
             <span> {movie.vote_average}</span>
           </p>
         </div>
@@ -45,7 +45,7 @@ export const MovieCardSingle = ({movie, action}) => {
 
   return (
     <div className="col-sm-3">
-      <div className="card  bg-white">
+      <div className="card  bg-dark">
       <Link to={`/movies/${movie.id}`}>
         <img
           className="card-img-tag center "
@@ -59,12 +59,12 @@ export const MovieCardSingle = ({movie, action}) => {
         </Link>
         <div className="card-body">
           <h4 className="card-title ">{movie.title}</h4>
-          <p>
-            <FontAwesomeIcon icon={["fas", "calendar"]} />
+          <p color = "orange">
+            <FontAwesomeIcon icon={["fas", "calendar"]} color = "orange"  />
             <span> {movie.release_date}</span>
           </p>
           <p>
-            <FontAwesomeIcon icon={["fas", "star"]} />
+            <FontAwesomeIcon icon={["fas", "star"]} color = "gold" />
             <span> {movie.vote_average}</span>
           </p>
         </div>

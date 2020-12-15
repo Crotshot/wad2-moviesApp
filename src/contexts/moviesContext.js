@@ -1,5 +1,5 @@
 import React, { useEffect, createContext, useReducer } from "react";
-import { getMovies, getUpcomingMovies, getPopularMovies, getTopRated } from "../api/tmdb-api";
+import { getMovies, getUpcomingMovies, getPopularMovies, getTopRated} from "../api/tmdb-api";
 
 export const MoviesContext = createContext(null);
 
@@ -59,6 +59,7 @@ const reducer = (state, action) => {
         ),
         upcoming: [...state.upcoming],
         popular: [...state.popular],
+        top_rated: [...state.top_rated],
       };
     default:
       return state;
@@ -66,7 +67,7 @@ const reducer = (state, action) => {
 };
 
 const MoviesContextProvider = (props) => {
-  const [state, dispatch] = useReducer(reducer, { movies: [], upcoming: [], popular: [], top_rated: [] });
+  const [state, dispatch] = useReducer(reducer, { movies: [], upcoming: [], popular: [], top_rated: []});
 
   const addToFavorites = (movieId) => {
     const index = state.movies.map((m) => m.id).indexOf(movieId);

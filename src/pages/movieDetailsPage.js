@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, Route, withRouter } from "react-router-dom";
 import MovieDetails from "../components/movieDetails";
 import PageTemplate from "../components/templateMoviePage";
 import MovieReviews from "../components/movieReviews";
 import useMovie from "../hooks/useMovie";
+import {MovieListSingle} from "../components/movieList";
+import AddReviewButton from '../components/buttons/addReview';
+import {SimilarContext, setSimilar} from '../contexts/similarContext';
 
 const MoviePage = props => {
   const { id } = props.match.params;
-  const [movie] = useMovie(id)  // NEW
+  const [movie] = useMovie(id)
+
+  setSimilar(id)
+  const context = useContext(SimilarContext);
+  context.refresh();
+  const similar = context.similar
+  
   return (
     <>
     {movie ? (
@@ -39,7 +48,12 @@ const MoviePage = props => {
           path={`/movies/:id/reviews`}
           render={props => <MovieReviews movie={movie} {...props} />}
         />
+        <MovieListSingle
+          action={movie => <AddReviewButton movie={movie} />}
+          movies={similar}
+        />
       </>
+      
     ) : (
       <p>Waiting for movie details</p>
     )}

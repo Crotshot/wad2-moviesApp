@@ -10,18 +10,22 @@ import SiteHeader from './components/siteHeader'
 import UpcomingMoviesPage from './pages/upcomingMoviesPage';
 import TopRatedMoviesPage from './pages/topRatedPage';
 import MoviesContextProvider from "./contexts/moviesContext";
+import SimilarContextProvider from "./contexts/similarContext";
 import GenresContextProvider from "./contexts/genresContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
 import WatchListPage from "./pages/watchListPage";
 import PopularMoviesPage from "./pages/popularMoviesPage";
+import 'semantic-ui-css/semantic.min.css'
 
 const App = () => {
+  //document.body.style = 'background: black;';
   return (
    <BrowserRouter>
-      <div className="jumbotron">
+      <div className="jumbotron  bg-dark">
         <SiteHeader /> 
-        <div className="container-fluid">
+        <div className="container-fluid  bg-secondry">
           <MoviesContextProvider>
+          <SimilarContextProvider>
           <GenresContextProvider>
         <Switch>
           <Route exact path="/reviews/form" component={AddMovieReviewPage} />
@@ -36,6 +40,7 @@ const App = () => {
           <Redirect from="*" to="/" />
           </Switch>
           </GenresContextProvider>
+          </SimilarContextProvider>
           </MoviesContextProvider>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import {MoviesContext} from "../../contexts/moviesContext";
+import { Button, Icon } from 'semantic-ui-react'
 
 const AddToWatchListButton = ({ movie }) => {
   const context = useContext(MoviesContext);
@@ -9,13 +10,14 @@ const AddToWatchListButton = ({ movie }) => {
     context.addToWatchList(movie.id);
   };
   return (
-    <button
-      type="button"
-      className="btn w-100 btn-primary"
-      onClick={handleAddToWatchList}
-    >
-      Add to Watch List
-    </button>
+    <center>
+      <Button animated onClick={handleAddToWatchList} color = 'green' fluid>
+        <Button.Content visible>Add to Watch List</Button.Content>
+         <Button.Content hidden>
+           <Icon name='arrow right' />
+       </Button.Content>
+     </Button>
+    </center>
   );
 };
 
